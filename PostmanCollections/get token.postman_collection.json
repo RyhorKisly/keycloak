@@ -1,0 +1,220 @@
+{
+	"info": {
+		"_postman_id": "0a9e7be7-8ada-4ae9-b30b-10f83c862b32",
+		"name": "get token",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "26695165",
+		"_collection_link": "https://blue-astronaut-753448.postman.co/workspace/bies_s~e5dda726-b4af-432d-bda6-e980f2c70008/collection/26695165-0a9e7be7-8ada-4ae9-b30b-10f83c862b32?action=share&source=collection_link&creator=26695165"
+	},
+	"item": [
+		{
+			"name": "implisit flow",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8484/realms/bies_s/protocol/openid-connect/auth?response_type=token&client_id=bies_s_rest_api",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8484",
+					"path": [
+						"realms",
+						"bies_s",
+						"protocol",
+						"openid-connect",
+						"auth"
+					],
+					"query": [
+						{
+							"key": "response_type",
+							"value": "token"
+						},
+						{
+							"key": "client_id",
+							"value": "bies_s_rest_api"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "standard flow ON 1 step",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": ""
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8484/realms/bies_s/protocol/openid-connect/auth?response_type=code&client_id=bies_s_rest_api",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8484",
+					"path": [
+						"realms",
+						"bies_s",
+						"protocol",
+						"openid-connect",
+						"auth"
+					],
+					"query": [
+						{
+							"key": "response_type",
+							"value": "code"
+						},
+						{
+							"key": "client_id",
+							"value": "bies_s_rest_api"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "standard flow ON 2 step",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8484/realms/bies_s/protocol/openid-connect/token?code=d4716d75-c9fa-4410-9a8a-e2abc7a6789b.a78f4d11-113c-4fbb-a640-ead935cc90f7.80a3ddc1-8682-4cb5-8c13-f8b7897c188e&grant_type=authorization_code&username=polina&password=123",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8484",
+					"path": [
+						"realms",
+						"bies_s",
+						"protocol",
+						"openid-connect",
+						"token"
+					],
+					"query": [
+						{
+							"key": "code",
+							"value": "d4716d75-c9fa-4410-9a8a-e2abc7a6789b.a78f4d11-113c-4fbb-a640-ead935cc90f7.80a3ddc1-8682-4cb5-8c13-f8b7897c188e"
+						},
+						{
+							"key": "grant_type",
+							"value": "authorization_code"
+						},
+						{
+							"key": "username",
+							"value": "polina"
+						},
+						{
+							"key": "password",
+							"value": "123"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Direct access grants ON",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": ""
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "bies_s_rest_api",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "polina",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "Ww8T1YgkVz71eEqypQuHM7qwEQOAtWV3",
+							"type": "text"
+						},
+						{
+							"key": "realm",
+							"value": "bies_s",
+							"type": "text"
+						}
+					]
+				},
+				"url": "http://localhost:8484/realms/bies_s/protocol/openid-connect/token"
+			},
+			"response": []
+		},
+		{
+			"name": "Service accounts roles ON",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "client_secret",
+							"value": "Ww8T1YgkVz71eEqypQuHM7qwEQOAtWV3",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "bies_s_rest_api",
+							"type": "text"
+						},
+						{
+							"key": "",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": "http://localhost:8484/realms/bies_s/protocol/openid-connect/token"
+			},
+			"response": []
+		}
+	]
+}

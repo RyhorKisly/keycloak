@@ -1,0 +1,105 @@
+{
+	"info": {
+		"_postman_id": "8304aabc-0946-4628-9f24-2ee1d230e592",
+		"name": "registration user",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "26695165",
+		"_collection_link": "https://blue-astronaut-753448.postman.co/workspace/bies_s~e5dda726-b4af-432d-bda6-e980f2c70008/collection/26695165-8304aabc-0946-4628-9f24-2ee1d230e592?action=share&source=collection_link&creator=26695165"
+	},
+	"item": [
+		{
+			"name": "get system token (Service accounts roles ON) step 1",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "client_secret",
+							"value": "Ww8T1YgkVz71eEqypQuHM7qwEQOAtWV3",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "bies_s_rest_api",
+							"type": "text"
+						},
+						{
+							"key": "",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": "http://localhost:8484/realms/bies_s/protocol/openid-connect/token"
+			},
+			"response": []
+		},
+		{
+			"name": "регистрация с системным токеном step 2",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJkYWI4NDQ4ZS04NjIwLTRiMjEtYTNhZi04MDc0YzNjYzg3ZTUifQ.eyJleHAiOjE3MDI0OTcwMDAsImlhdCI6MTcwMjQ5NTIwMCwianRpIjoiYzQwN2YwOTEtY2JiMC00OGFkLWJiMzgtMTM3NzA0N2JjY2IxIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4NDg0L3JlYWxtcy9iaWVzX3MiLCJhdWQiOlsicmVhbG0tbWFuYWdlbWVudCIsImFjY291bnQiXSwic3ViIjoiNTBmMTJiOTEtNjk1Mi00MTA2LWI3Y2UtNDM2OWMwYzg0NjYxIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYmllc19zX3Jlc3RfYXBpIiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyJodHRwOi8vbG9jYWxob3N0OjgwODAiXSwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbImRlZmF1bHQtcm9sZXMtYmllc19zIiwib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiJdfSwicmVzb3VyY2VfYWNjZXNzIjp7InJlYWxtLW1hbmFnZW1lbnQiOnsicm9sZXMiOlsibWFuYWdlLXVzZXJzIl19LCJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6InByb2ZpbGUgZW1haWwiLCJjbGllbnRIb3N0IjoiMTcyLjE4LjAuMSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwicHJlZmVycmVkX3VzZXJuYW1lIjoic2VydmljZS1hY2NvdW50LWJpZXNfc19yZXN0X2FwaSIsImNsaWVudEFkZHJlc3MiOiIxNzIuMTguMC4xIiwiY2xpZW50X2lkIjoiYmllc19zX3Jlc3RfYXBpIn0.LCB1jSu9E1d_Brw3yeDore208LW0VOfc37dawZjfprs"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"enabled\":true,\n    \"username\":\"test2\",\n    \"email\":\"tests2@mail.ru\",\n    \"credentials\": [\n        {\n            \"type\":\"password\",\n            \"value\":\"123\",\n            \"temporary\":false\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8484/admin/realms/bies_s/users"
+			},
+			"response": []
+		},
+		{
+			"name": "регистрация через userService",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": ""
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"login\": \"test15\",\n    \"email\": \"test15@test.test\",\n    \"password\": \"123\",\n    \"fio\": \"Кислый Григорий Дмитриевич\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/registration"
+			},
+			"response": []
+		}
+	]
+}
