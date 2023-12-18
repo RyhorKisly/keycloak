@@ -18,8 +18,7 @@ jwt:
 
 keycloak:
   realm: bies_s
-  adminClientId: bies_s_rest_api
-  adminClientSecret: Ww8T1YgkVz71eEqypQuHM7qwEQOAtWV3
-  client: authenticationClientId
+  client-id: bies_s_rest_api
+  client-secret: Ww8T1YgkVz71eEqypQuHM7qwEQOAtWV3
   url-auth: http://localhost:8484
 

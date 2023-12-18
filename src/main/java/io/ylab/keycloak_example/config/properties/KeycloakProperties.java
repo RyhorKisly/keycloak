@@ -9,9 +9,8 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 @Setter
 public class KeycloakProperties {
     private String realm;
-    private String adminClientId;
-    private String adminClientSecret;
-    private String client;
+    private String clientId;
+    private String clientSecret;
     private String urlAuth;
 
 }
