@@ -13,9 +13,14 @@ import org.keycloak.admin.client.Keycloak;
 import org.keycloak.admin.client.KeycloakBuilder;
 import org.keycloak.admin.client.resource.RealmResource;
 import org.keycloak.admin.client.resource.UsersResource;
+import org.keycloak.representations.AccessTokenResponse;
 import org.keycloak.representations.idm.CredentialRepresentation;
 import org.keycloak.representations.idm.UserRepresentation;
+import org.springframework.http.*;
 import org.springframework.stereotype.Service;
+import org.springframework.util.LinkedMultiValueMap;
+import org.springframework.util.MultiValueMap;
+import org.springframework.web.client.RestTemplate;
 
 import java.util.*;
 
@@ -42,22 +47,51 @@ public class KeycloakAccessServiceImpl implements IKeycloakAccessService {
     }
 
     @Override
-    public String authorize(UserAuthorizeDTO dto) {
+    public AccessTokenResponse authorize(UserAuthorizeDTO dto) {
         Keycloak userKeycloak = KeycloakBuilder.builder()
                 .serverUrl(properties.getUrlAuth())
                 .realm(properties.getRealm())
                 .grantType(OAuth2Constants.PASSWORD)
                 .username(dto.getLogin())
                 .password(dto.getPassword())
-                .clientId(properties.getAdminClientId())
-                .clientSecret(properties.getAdminClientSecret())
+                .clientId(properties.getClientId())
+                .clientSecret(properties.getClientSecret())
                 .build();
-        return userKeycloak.tokenManager().getAccessTokenString();
+        return userKeycloak.tokenManager().getAccessToken();
+    }
+
+    @Override
+    public AccessTokenResponse refresh(String token) {
+
+        RestTemplate restTemplate = new RestTemplate();
+
+        // Устанавливаем параметры запроса
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.APPLICATION_FORM_URLENCODED);
+
+        // Параметры запроса на получение токена
+        MultiValueMap<String, String> requestParams = new LinkedMultiValueMap<>();
+        requestParams.add("grant_type", "refresh_token");
+        requestParams.add("client_id", properties.getClientId());
+        requestParams.add("client_secret", properties.getClientSecret());
+        requestParams.add("refresh_token", token);
+
+        // Формируем запрос
+        HttpEntity<MultiValueMap<String, String>> request = new HttpEntity<>(requestParams, headers);
+
+        // Отправляем запрос на получение токена
+        ResponseEntity<AccessTokenResponse> response = restTemplate.postForEntity(
+                properties.getUrlAuth() + "/realms/" + properties.getRealm() + "/protocol/openid-connect/token",
+                request,
+                AccessTokenResponse.class
+        );
+
+        return response.getBody();
     }
 
     /**
      * Sets up a UserRepresentation object based on the provided UserCreateDTO and credentials.
-     * The role is assigned by system automatically. It"s "USER"
+     * The role is assigned by system automatically. It's "USER"
      *
      * @param dto The UserCreateDTO containing user details
      * @param credentials The list of CredentialRepresentation objects for the user
