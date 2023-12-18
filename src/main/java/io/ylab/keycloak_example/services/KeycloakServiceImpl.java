@@ -57,10 +57,14 @@ public class KeycloakServiceImpl implements IKeycloakService {
 
     @Override
     public UserRepresentation updateUser(String userId, UserCreateDTO dto) {
+        //todo нужно бы сделать верификацию изменений через админа (запросом на мыло)
         RealmResource realmResource = keycloak.realm(properties.getRealm());
         UsersResource usersResource = realmResource.users();
 
         UserRepresentation userRepresentation = usersResource.get(userId).toRepresentation();
+        if(!userRepresentation.getUsername().equals(dto.getLogin())) {
+            //todo выкинуть исключение
+        }
 
         List<CredentialRepresentation> credentials = setCredentialRepresentations(dto);
 

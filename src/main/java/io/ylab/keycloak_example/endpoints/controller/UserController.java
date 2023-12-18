@@ -39,6 +39,18 @@ public class UserController {
     }
 
     /**
+     * Retrieves the current user. userId gets from url
+     * @return ResponseEntity containing the current user representation
+     */
+    @GetMapping("/{uuid}")
+    public ResponseEntity<UserRepresentation> getUser(
+            @PathVariable UUID uuid
+    ) {
+        //todo добавить право доступа - админ
+        return new ResponseEntity<>( keycloakService.getUserById(uuid.toString()), HttpStatus.OK);
+    }
+
+    /**
      * Retrieves all users.
      * @return ResponseEntity containing a list of user representations
      */
@@ -58,6 +70,7 @@ public class UserController {
             @PathVariable UUID uuid,
             @RequestBody UserCreateDTO userCreateDTO
     ) {
+        //todo прописать прово доступа - админ
         UserRepresentation user = keycloakService.updateUser(uuid.toString(), userCreateDTO);
         return new ResponseEntity<>(user, HttpStatus.OK);
     }
@@ -67,7 +80,7 @@ public class UserController {
      * @param userCreateDTO The updated user data
      * @return ResponseEntity containing the updated user representation
      */
-    @PutMapping
+    @PutMapping("/me")
     public ResponseEntity<UserRepresentation> updateUser(
             @RequestBody UserCreateDTO userCreateDTO
     ) {
@@ -82,8 +95,8 @@ public class UserController {
      * Retrieves the user ID from the token.
      * @return The user ID extracted from the token
      */
-    private static String getUserIdFromToken() {
-        //todo прописать прова доступа, протестить
+    private String getUserIdFromToken() {
+        //todo прописать прова доступа всем авторизированным
         Jwt jwt = null;
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         if (authentication instanceof JwtAuthenticationToken) {
@@ -95,6 +108,5 @@ public class UserController {
 
         return userId;
     }
-
 
 }
