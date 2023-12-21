@@ -1,0 +1,122 @@
+{
+	"info": {
+		"_postman_id": "dc2122a8-b9b2-4fdf-ac62-f1ebd087e00f",
+		"name": "UserController",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "26695165",
+		"_collection_link": "https://blue-astronaut-753448.postman.co/workspace/bies_s~e5dda726-b4af-432d-bda6-e980f2c70008/collection/26695165-dc2122a8-b9b2-4fdf-ac62-f1ebd087e00f?action=share&source=collection_link&creator=26695165"
+	},
+	"item": [
+		{
+			"name": "регистрация",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"login\": \"test14\",\n    \"email\": \"test14@test.test\",\n    \"password\": \"123\",\n    \"fio\": \"Кислый Григорий Дмитриевич\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/users"
+			},
+			"response": []
+		},
+		{
+			"name": "users/me",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJSdmFGZi1EWEFtd3g2RzM3TDRDZHhqTTRFM0J5OTFmYUs4V2dDS01NM2IwIn0.eyJleHAiOjE3MDI5NzI5NjYsImlhdCI6MTcwMjk3MjY2NiwianRpIjoiMTM1MjBhYmYtYjQyOC00Nzg5LTk3MTQtMGZiMjhjMDlkOTIwIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4NDg0L3JlYWxtcy9iaWVzX3MiLCJhdWQiOiJhY2NvdW50Iiwic3ViIjoiMjliNTE1ZWMtNzMwYS00Y2I5LWJmMGItNmM4MmYxNGVjMTZjIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYmllc19zX3Jlc3RfYXBpIiwic2Vzc2lvbl9zdGF0ZSI6IjU0MDJlOGNlLTNjNzQtNGU3My05NWQ0LTViNWQxZjNhMjIxZiIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiaHR0cDovL2xvY2FsaG9zdDo4MDgwIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJkZWZhdWx0LXJvbGVzLWJpZXNfcyIsIm9mZmxpbmVfYWNjZXNzIiwiQURNSU4iLCJ1bWFfYXV0aG9yaXphdGlvbiJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoiZW1haWwgcHJvZmlsZSIsInNpZCI6IjU0MDJlOGNlLTNjNzQtNGU3My05NWQ0LTViNWQxZjNhMjIxZiIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJwb2xpbmEiLCJmaW8iOiLQmtC40YHQu9GL0Lkg0JPRgNC40LPQvtGA0LjQuSDQlNC80LjRgtGA0LjQtdCy0LjRhyIsImVtYWlsIjoicG9saW5hQHBvbGluYS5wb2xpbmEifQ.Vdk6QrfavU5v3m8dzd3-7lEv-HHYhoci5rdmRrWO8By92vUe-jk7w-JrBZfev8nFmdRO9nF9kIvvRNnqAiaO5GpYZ8opwt9fVqNVCpTFdODTEnE70U4qw-8xys3cPy6C75spLaobVdhHe6irbYsIUx0jx0aOn2yTO_u9Gt8i7bnI1_MdsEDbVf70LzT9msbI2PSHN-RsjhMG0Xblp0IT91EwXOyW6pWjUvLMw8eExBd3VKFZGl_tSWM2Eu05KWFJAZVbaDWHsc8FWurnpN9sAFWsHGZXoJSByvc-9t14CnOJrlNn-8mt7GGKb5B5knfN30r-U8myKj-xTi_i4YVMSQ"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/users/me"
+			},
+			"response": []
+		},
+		{
+			"name": "users/{id}",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICIzeUU0dU1UVlhlMUJ0ZExqSnZJWE5fNjN6eVdvMFZlV0VGMU4wZEtpVVp3In0.eyJleHAiOjE3MDI5MTUwOTIsImlhdCI6MTcwMjkxMzI5MiwianRpIjoiY2Y4MWUwOTMtYzNhNy00YzQ5LWFhYzQtM2M5Nzc0M2NlMGZiIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4NDg0L3JlYWxtcy9iaWVzX3MiLCJhdWQiOiJhY2NvdW50Iiwic3ViIjoiMzdhZjFjOTQtNmIwNy00MTQwLWEyYTItYjcyODc0YWEwY2MzIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYmllc19zX3Jlc3RfYXBpIiwic2Vzc2lvbl9zdGF0ZSI6IjMxMTA4M2JjLWNjMmEtNGFhNi1hN2VkLTAwYzhmMThiMGY2YyIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiaHR0cDovL2xvY2FsaG9zdDo4MDgwIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJkZWZhdWx0LXJvbGVzLWJpZXNfcyIsIm9mZmxpbmVfYWNjZXNzIiwiQURNSU4iLCJ1bWFfYXV0aG9yaXphdGlvbiJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImJpZXNfc19yZXN0X2FwaSI6eyJyb2xlcyI6WyJBRE1JTiJdfSwiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJwcm9maWxlIGVtYWlsIiwic2lkIjoiMzExMDgzYmMtY2MyYS00YWE2LWE3ZWQtMDBjOGYxOGIwZjZjIiwicm9sZSI6IkFETUlOIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsInByZWZlcnJlZF91c2VybmFtZSI6InBvbGluYSIsImZpbyI6ItGE0LjQviIsImVtYWlsIjoicG9saW5hQHBvbGluYS5wb2xpbmEifQ.ky02sjeFIkIXsqS2bzLP2IhHAEFPve7y5DRO_WK2Q_PGzAsY8horQ4WzgI56yarq63SBsw_n-Yrx2WatntgrncRMm2u9EHK3-0SWKXcHHDDb6whna8nb08GMkrlGPqtl-YWe6NggslicYkQfjiKBdexDIuDE9ywrz6v6KSQHY6vehyMe3YICBYMefqRObFvHXW9YFQA0ZS1fq6sty99jaQhgWMJ6h0yDw9Sm1HDZyghzIIwBJ89OXjqCxvOHT9crmKt5cvp64hZke7TvfwwEFVUAf2d_LkEfJ8d6_rW3iFJe4S5NqW7HfOk7fvebrliQZRN30WmrHpnPpLxWzmKFlQ"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/users/91e458c4-53ec-4522-ae70-c55341f28a96"
+			},
+			"response": []
+		},
+		{
+			"name": "/users",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJBN21tR3djWmlLUUlxeXVBRzhXdDh0UWNwUHhtQ1FBeVZUZTJZZnNaS2RBIn0.eyJleHAiOjE3MDMwNzI4MjksImlhdCI6MTcwMzA3MjUyOSwianRpIjoiYmY1YzQ1MzctZjg0Ny00ODA1LWJkZjUtMWExMTFlNTZhYWRhIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4NDg0L3JlYWxtcy9iaWVzX3MiLCJhdWQiOlsicmVhbG0tbWFuYWdlbWVudCIsImJyb2tlciIsImFjY291bnQiXSwic3ViIjoiNWFmNzE2MjktZmNkZS00MzYxLWI3ZmMtZWM2NjQ3OTNiYzEzIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYmllc19zX3Jlc3RfYXBpIiwic2Vzc2lvbl9zdGF0ZSI6IjVhMjEwYTc4LTgyNjgtNDcxMy05Y2E5LTA5MjFiZWJhNjc1MCIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiaHR0cDovL2xvY2FsaG9zdDo4MDgwIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJkZWZhdWx0LXJvbGVzLWJpZXNfcyIsIm9mZmxpbmVfYWNjZXNzIiwidW1hX2F1dGhvcml6YXRpb24iLCJBRE1JTiIsIlVTRVIiXX0sInJlc291cmNlX2FjY2VzcyI6eyJyZWFsbS1tYW5hZ2VtZW50Ijp7InJvbGVzIjpbImNyZWF0ZS1jbGllbnQiXX0sImJyb2tlciI6eyJyb2xlcyI6WyJyZWFkLXRva2VuIl19LCJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50Iiwidmlldy1hcHBsaWNhdGlvbnMiLCJ2aWV3LWNvbnNlbnQiLCJ2aWV3LWdyb3VwcyIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwibWFuYWdlLWNvbnNlbnQiLCJkZWxldGUtYWNjb3VudCIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoiZW1haWwgcHJvZmlsZSIsInNpZCI6IjVhMjEwYTc4LTgyNjgtNDcxMy05Y2E5LTA5MjFiZWJhNjc1MCIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJ0ZXN0MiIsImZpbyI6ItCa0LjRgdC70YvQuSDQk9GA0LjQs9C-0YDQuNC5INCU0LzQuNGC0YDQuNC10LLQuNGHIiwiZW1haWwiOiJ0ZXN0MkB0ZXN0LnRlc3QifQ.Cxu44Hd0IU3YtIFwEDd5z7lcgdEyJsexD3WiUXrUEfQucoRfYNvzwCYP6S8AUUlH6l5NoMTunPM4rr3cjLdBpyjTvi15DC4lakKsVSjpv1GlczDJhyziytVSFNc0KFnIyICt-s2WYLoCc-02JvSfb2an7Pt6BcB0pHjT0AGWNbHgXHDEhdJt1nMMiaPWxTp0l7QUO88bcZll2k5RsJGR1wc5PcqWvT4hMCB9InL_ImyADUTLqcpFh8v-h1o3zEjtXlFQQzzAVI23UXY0ucbg7brIu3T3ezRMisRDIyijfQ_4IAaCwI8vANmlNBhHa8G5giZhDWm0RvSz3aITxCY3_g"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/users"
+			},
+			"response": []
+		},
+		{
+			"name": "/users/{id}",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICIzeUU0dU1UVlhlMUJ0ZExqSnZJWE5fNjN6eVdvMFZlV0VGMU4wZEtpVVp3In0.eyJleHAiOjE3MDI4ODE5NzAsImlhdCI6MTcwMjg4MDE3MCwianRpIjoiN2RkMDA4MGItZDEyYS00YTY5LTlmOGItYzVmNWY4Yjg3ZjNiIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4NDg0L3JlYWxtcy9iaWVzX3MiLCJhdWQiOiJhY2NvdW50Iiwic3ViIjoiYmI0YTgwZmUtNjJiMS00NWVmLTkwZGMtNTczODQxZmY1YzVkIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYmllc19zX3Jlc3RfYXBpIiwic2Vzc2lvbl9zdGF0ZSI6ImY2ODBmZmMxLTJhMWItNDlkNi04NjI0LWRlMjllNGZlNWE5YyIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiaHR0cDovL2xvY2FsaG9zdDo4MDgwIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJkZWZhdWx0LXJvbGVzLWJpZXNfcyIsIm9mZmxpbmVfYWNjZXNzIiwidW1hX2F1dGhvcml6YXRpb24iXX0sInJlc291cmNlX2FjY2VzcyI6eyJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6InByb2ZpbGUgZW1haWwiLCJzaWQiOiJmNjgwZmZjMS0yYTFiLTQ5ZDYtODYyNC1kZTI5ZTRmZTVhOWMiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwicHJlZmVycmVkX3VzZXJuYW1lIjoidGVzdDE1IiwiZmlvIjoi0JrQuNGB0LvRi9C5INCT0YDQuNCz0L7RgNC40Lkg0JTQvNC40YLRgNC40LXQstC40YciLCJlbWFpbCI6InRlc3QxNUB0ZXN0LnRlc3QifQ.Xhdf6UPv_WUZffYp3JCk0WHMnDSbdtUDJAqnrbvxJEmCaLE3xSQhY6bKNQYTna5kB99yNNOOYJ9vEYrMOucwmRN5uxFa8i4k9lDVxp_ILy7LxZiGTpzeg8IJ5ozNDb5lZDuf7IxGdWuA45ZQrVSdPsUWaEcwyrKHcvfFdavJdjMMnAYmAU5cp9NHwU2Z46nCfRzOgvdqZGLdXURV4MhHzsXTtAvhSig2gxvVOlhcg73Hw9pXNlFAaRg1sO5KN3Fxc75p6TUxBoks0cayLxVrgeDxyxRHQeycVGpVZWeFgcnnBuSlLrsS0Hqxq2zoi45rFHe31Zk8jA6Z6Rs682cy_w"
+					}
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"login\": \"test15\",\n    \"email\": \"test15@test.test\",\n    \"password\": \"123\",\n    \"role\": \"ADMIN\",\n    \"fio\": \"Кислый Григорий Dbrnjhjdbx\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/users/uuid"
+			},
+			"response": []
+		},
+		{
+			"name": "/me",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICIzeUU0dU1UVlhlMUJ0ZExqSnZJWE5fNjN6eVdvMFZlV0VGMU4wZEtpVVp3In0.eyJleHAiOjE3MDI4ODM4MTcsImlhdCI6MTcwMjg4MjAxNywianRpIjoiNDUyZWIxZjctNzBkZi00YTk1LTkyYTYtODQ3MzZkOGI5MmRmIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4NDg0L3JlYWxtcy9iaWVzX3MiLCJhdWQiOiJhY2NvdW50Iiwic3ViIjoiYmI0YTgwZmUtNjJiMS00NWVmLTkwZGMtNTczODQxZmY1YzVkIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYmllc19zX3Jlc3RfYXBpIiwic2Vzc2lvbl9zdGF0ZSI6IjMyZjk2MjRlLTQ4MTctNDUwMy05YjY0LWZhMmU5NDRhZTM4NSIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiaHR0cDovL2xvY2FsaG9zdDo4MDgwIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJkZWZhdWx0LXJvbGVzLWJpZXNfcyIsIm9mZmxpbmVfYWNjZXNzIiwidW1hX2F1dGhvcml6YXRpb24iXX0sInJlc291cmNlX2FjY2VzcyI6eyJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6InByb2ZpbGUgZW1haWwiLCJzaWQiOiIzMmY5NjI0ZS00ODE3LTQ1MDMtOWI2NC1mYTJlOTQ0YWUzODUiLCJyb2xlIjoiQURNSU4iLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwicHJlZmVycmVkX3VzZXJuYW1lIjoidGVzdDE1IiwiZmlvIjoi0JrQuNGB0LvRi9C5INCT0YDQuNCz0L7RgNC40Lkg0JTQvNC40YLQuNGA0LXQstC40YciLCJlbWFpbCI6InRlc3QxNUB0ZXN0LnRlc3QifQ.mmMwRsosuAieEa6z4PmvpchIp5rhEZSBr7siY44PNp0Rgi8UZGZMfoAt6qwaqre1Izrf6nztDJHr3ff0x_HHGZ4gPEsRgof_j7aEyZnXF8AloCTIQsAMQHRW5fJuzl5sP1edo-DbDzYcV8osrXbCde8rLRj5pyJxsAcjcFMMQnNy4hXwaa76jtwh3NdAcxIHskLjGHC6Zx9QGpbewwFviqnvYgvNrN6c1TvqtIjj3A-Vs0R1olA2sBI-bWKv7Q-C7edX-RXGQrZjhv2NSyZrgkd8jH_cnAebZxGTiEjyUcydndE-aXShJJLqzjgrgajOIxhS5bOLzKoJjHfjyaI6bw"
+					}
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"login\": \"test15\",\n    \"email\": \"test15@test.test\",\n    \"password\": \"123\",\n    \"role\": \"ADMIN\",\n    \"fio\": \"Кислый Григорий Дмитиревич\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/users/me"
+			},
+			"response": []
+		}
+	]
+}

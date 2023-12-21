@@ -1,0 +1,48 @@
+{
+	"info": {
+		"_postman_id": "d4641774-915d-4f52-b9d1-a427f43d8324",
+		"name": "DemoCollection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "26695165",
+		"_collection_link": "https://blue-astronaut-753448.postman.co/workspace/bies_s~e5dda726-b4af-432d-bda6-e980f2c70008/collection/26695165-d4641774-915d-4f52-b9d1-a427f43d8324?action=share&source=collection_link&creator=26695165"
+	},
+	"item": [
+		{
+			"name": "demo для админа в UserService",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJBN21tR3djWmlLUUlxeXVBRzhXdDh0UWNwUHhtQ1FBeVZUZTJZZnNaS2RBIn0.eyJleHAiOjE3MDMwNzcxMjYsImlhdCI6MTcwMzA3NjgyNiwianRpIjoiNTQyMmQwNzctOTZhYi00ZGRkLWI2MzAtOTM3ZTBjNzZhNTU3IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4NDg0L3JlYWxtcy9iaWVzX3MiLCJhdWQiOlsicmVhbG0tbWFuYWdlbWVudCIsImJyb2tlciIsImFjY291bnQiXSwic3ViIjoiNWFmNzE2MjktZmNkZS00MzYxLWI3ZmMtZWM2NjQ3OTNiYzEzIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYmllc19zX3Jlc3RfYXBpIiwic2Vzc2lvbl9zdGF0ZSI6ImFjNmQxZjdiLTQ3NjMtNDg2OS1hMWI5LWM2MzM5Y2U5ZmViOSIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiaHR0cDovL2xvY2FsaG9zdDo4MDgwIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJkZWZhdWx0LXJvbGVzLWJpZXNfcyIsIm9mZmxpbmVfYWNjZXNzIiwidW1hX2F1dGhvcml6YXRpb24iLCJBRE1JTiIsIlVTRVIiXX0sInJlc291cmNlX2FjY2VzcyI6eyJyZWFsbS1tYW5hZ2VtZW50Ijp7InJvbGVzIjpbImNyZWF0ZS1jbGllbnQiXX0sImJyb2tlciI6eyJyb2xlcyI6WyJyZWFkLXRva2VuIl19LCJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50Iiwidmlldy1hcHBsaWNhdGlvbnMiLCJ2aWV3LWNvbnNlbnQiLCJ2aWV3LWdyb3VwcyIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwibWFuYWdlLWNvbnNlbnQiLCJkZWxldGUtYWNjb3VudCIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoiZW1haWwgcHJvZmlsZSIsInNpZCI6ImFjNmQxZjdiLTQ3NjMtNDg2OS1hMWI5LWM2MzM5Y2U5ZmViOSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJ0ZXN0MiIsImZpbyI6ItCa0LjRgdC70YvQuSDQk9GA0LjQs9C-0YDQuNC5INCU0LzQuNGC0YDQuNC10LLQuNGHIiwiZW1haWwiOiJ0ZXN0MkB0ZXN0LnRlc3QifQ.Lpph7_A0-oR6HHfwCWZL8lmDiYwoBm4cG_otGxfN2tD9OFQNAHWmIze24UYj0y5qjACMMK8ve1Buq8xZ2LsD3jLl9hbCTzwPElVry504xveT2Cj6ro42BgTRz1v5Do8wKWW4HOAEdHhG_NQjfV7rQgqiKYBzgUcDexTHCMQbY-Vm4hhtqdNBwE1pxrvWpa0anWwxBDYap_u4r1up_PFOJBPabkSFMEzv4g9q-imrOhhcPjVLBnzsBClx78R_d2BmJTcpS5nkuS6ES59PFQcojXp3q4GdgjlVxGRjQQuNF2EM5r-VCVOrK1gFnoiUTsVYkr8yipJPoxitUrNg-XQfJQ"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/api/v1/demo/hello-2"
+			},
+			"response": []
+		},
+		{
+			"name": "demo для админа и юзера UserService",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJBN21tR3djWmlLUUlxeXVBRzhXdDh0UWNwUHhtQ1FBeVZUZTJZZnNaS2RBIn0.eyJleHAiOjE3MDMwMjI2ODAsImlhdCI6MTcwMzAyMjM4MCwianRpIjoiNGI1YmY4ZTQtZWM2Ny00NTFlLWEzZjEtYjU5NTdhNGFjN2ViIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4NDg0L3JlYWxtcy9iaWVzX3MiLCJhdWQiOiJhY2NvdW50Iiwic3ViIjoiNWFmNzE2MjktZmNkZS00MzYxLWI3ZmMtZWM2NjQ3OTNiYzEzIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYmllc19zX3Jlc3RfYXBpIiwic2Vzc2lvbl9zdGF0ZSI6ImQyYzhjYzg4LTU0NzUtNDRmZS05Y2FkLWY1ZWM3ODI0NjFlYiIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiaHR0cDovL2xvY2FsaG9zdDo4MDgwIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJkZWZhdWx0LXJvbGVzLWJpZXNfcyIsIm9mZmxpbmVfYWNjZXNzIiwidW1hX2F1dGhvcml6YXRpb24iXX0sInJlc291cmNlX2FjY2VzcyI6eyJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJzaWQiOiJkMmM4Y2M4OC01NDc1LTQ0ZmUtOWNhZC1mNWVjNzgyNDYxZWIiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwicHJlZmVycmVkX3VzZXJuYW1lIjoidGVzdDIiLCJlbWFpbCI6InRlc3QyQHRlc3QudGVzdCJ9.g9Kk7zJOLEDFqLjixHFGKDnDmLV6UA9GgCSiamLll8JQBuBHKKftGau3CnuJr7U-G1XWC9kKpB5qLBOF3c7naY1DW3-PM2ERXJJS_8nqWzaLBNNIQiTBQxMsPKsqRa2zY_P0ZRrPP5DLfFgBBrAeLxZxA9gxZWTGJSsXZq-SF2hmyKL8EiQrPaJy9HmQtVYumKqzkbIXnx-lj3zhXb18CmMTNLw7R2uV2ja2xrC1pUInh_cbpUfXUNw8eawI3p9sXbd871dZFoFmZq2tFQep0XcjUhDlF1-3UUtKhHIeawz0YFUkoozWd2FlTEQewNUmCpxpwzcjQ6JnT1nePMVemg"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": "http://localhost:8080/api/v1/demo"
+			},
+			"response": []
+		}
+	]
+}
