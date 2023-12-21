@@ -63,6 +63,12 @@ public class KeycloakUserRoleServiceImpl implements KeycloakUserRoleService {
         userResource.roles().clientLevel(clientRep.getId()).add(Collections.singletonList(role));
     }
 
+    /**
+     * Checks if any of the UserRole values exist in the provided list of RoleRepresentations.
+     *
+     * @param clientRoles List of RoleRepresentations to search for UserRole values
+     * @return UserRole if found, otherwise null
+     */
     private UserRole getRoleIfExist(List<RoleRepresentation> clientRoles) {
         for (UserRole value : UserRole.values()) {
             for (RoleRepresentation clientRole : clientRoles) {
@@ -74,6 +80,12 @@ public class KeycloakUserRoleServiceImpl implements KeycloakUserRoleService {
         return null;
     }
 
+    /**
+     * Checks if any of the UserRole values exist in the provided list of RoleRepresentations.
+     *
+     * @param clientRoles List of RoleRepresentations to search for UserRole values
+     * @return true if any UserRole value is found, otherwise false
+     */
     private boolean checkRoleIfExist(List<RoleRepresentation> clientRoles) {
         for (UserRole value : UserRole.values()) {
             for (RoleRepresentation clientRole : clientRoles) {
@@ -85,6 +97,14 @@ public class KeycloakUserRoleServiceImpl implements KeycloakUserRoleService {
         return false;
     }
 
+    /**
+     * Deletes the roles if any of the UserRole values exist in the provided list of RoleRepresentations.
+     *
+     * @param clientRoles List of RoleRepresentations to check for UserRole values
+     * @param realm RealmResource instance
+     * @param userResource UserResource instance, remove role
+     * @param clientRep ClientRepresentation instance, contains client roles
+     */
     private void deleteRoleIfExist(
             List<RoleRepresentation> clientRoles,
             RealmResource realm,

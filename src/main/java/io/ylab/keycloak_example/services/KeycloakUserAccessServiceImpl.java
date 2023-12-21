@@ -59,6 +59,12 @@ public class KeycloakUserAccessServiceImpl implements KeycloakUserAccessService 
         return response.getBody();
     }
 
+    /**
+     * Sets up and returns a Keycloak instance based on the provided UserAuthorizeDTO credentials.
+     *
+     * @param dto UserAuthorizeDTO containing login and password credentials
+     * @return Configured Keycloak instance
+     */
     private Keycloak setUserKeycloak(UserAuthorizeDTO dto) {
         return KeycloakBuilder.builder()
                 .serverUrl(properties.getUrlAuth())

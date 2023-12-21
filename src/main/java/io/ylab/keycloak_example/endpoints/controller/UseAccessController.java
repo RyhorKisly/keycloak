@@ -35,6 +35,12 @@ public class UseAccessController {
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
+    /**
+     * Endpoint to refresh an access token.
+     *
+     * @param token DTO containing the refresh token
+     * @return ResponseEntity with the refreshed access token
+     */
     @PostMapping("/users/refresh")
     public ResponseEntity<AccessTokenResponse> refreshToken(
             @RequestBody TokenDTO token
