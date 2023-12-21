@@ -1,21 +1,12 @@
 package io.ylab.keycloak_example.services.api;
 
-import io.ylab.keycloak_example.core.dto.KeycloakServiceResponseDTO;
 import io.ylab.keycloak_example.core.dto.UserAuthorizeDTO;
-import io.ylab.keycloak_example.core.dto.UserCreateDTO;
 import org.keycloak.representations.AccessTokenResponse;
 
 /**
  * Service interface for Keycloak access operations.
  */
-public interface IKeycloakAccessService {
-
-    /**
-     * Registers a new user.
-     * @param dto The UserCreateDTO containing user details
-     * @return KeycloakServiceResponseDTO containing the response and user DTO
-     */
-    KeycloakServiceResponseDTO<UserCreateDTO> register(UserCreateDTO dto);
+public interface KeycloakUserAccessService {
 
     /**
      * Authorizes a user.
@@ -23,6 +14,12 @@ public interface IKeycloakAccessService {
      * @return The authorization token
      */
     AccessTokenResponse authorize(UserAuthorizeDTO dto);
+
+    /**
+     * Refreshes an access token.
+     * @param token The refresh token
+     * @return The new access token
+     */
     AccessTokenResponse refresh(String token);
 
 }
