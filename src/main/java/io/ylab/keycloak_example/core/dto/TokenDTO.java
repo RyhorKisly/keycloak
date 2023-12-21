@@ -4,16 +4,16 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+/**
+ * DTO representing a token.
+ */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class UserCreateDTO {
+public class TokenDTO {
 
     /**
-     * userName in Keycloak
+     * The token string.
      */
-    private String login;
-    private String email;
-    private String password;
-    private String fio;
+    String token;
 }
