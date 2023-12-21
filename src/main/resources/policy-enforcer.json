@@ -1,0 +1,22 @@
+{
+  "realm": "bies_s",
+  "auth-server-url": "http://localhost:8484",
+  "resource": "bies_s_rest_api",
+  "credentials": {
+    "secret": "UYCZunO1bm3Bh71mjfMFV5pcPbYh6IlW"
+  },
+  "paths" : [
+    {
+      "path": "/users/registration",
+      "enforcement-mode": "DISABLED"
+    },
+    {
+      "path": "/users/auth",
+      "enforcement-mode": "DISABLED"
+    },
+    {
+      "path": "users/refresh",
+      "enforcement-mode": "DISABLED"
+    }
+  ]
+}

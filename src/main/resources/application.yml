@@ -1,7 +1,7 @@
 spring:
   security:
     oauth2:
-      resource-server:
+      resourceserver:
         jwt:
 #          URL-адрес сервера аутентификации, который выступает в роли издателя токенов
           issuer-uri: ${keycloak.url-auth}/realms/${keycloak.realm}
@@ -14,11 +14,17 @@ server:
 jwt:
   auth:
     converter:
+      resource-id: ${keycloak.client-id}
       principle-attribute: preferred_username
 
 keycloak:
   realm: bies_s
   client-id: bies_s_rest_api
-  client-secret: Ww8T1YgkVz71eEqypQuHM7qwEQOAtWV3
+  client-secret: UYCZunO1bm3Bh71mjfMFV5pcPbYh6IlW
   url-auth: http://localhost:8484
+
+
+
+
+
 
