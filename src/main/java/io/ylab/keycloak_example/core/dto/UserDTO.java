@@ -1,24 +1,20 @@
 package io.ylab.keycloak_example.core.dto;
 
+import io.ylab.keycloak_example.core.enums.UserRole;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-/**
- * DTO representing user authorization credentials.
- */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class UserAuthorizeDTO {
+public class UserDTO {
 
     /**
      * userName in Keycloak
      */
     private String login;
-
-    /**
-     * The password for authorization.
-     */
-    private String password;
+    private String email;
+    private UserRole role;
+    private String fio;
 }

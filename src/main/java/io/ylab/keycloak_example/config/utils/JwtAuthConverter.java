@@ -30,6 +30,9 @@ public class JwtAuthConverter implements Converter<Jwt, AbstractAuthenticationTo
 
     @Value("${jwt.auth.converter.principle-attribute}")
     private String principleAttribute;
+    @Value("${jwt.auth.converter.resource-id}")
+    private String resourceId;
+
 
     /**
      * JWT (JSON Web Token) to an {@link AbstractAuthenticationToken} object,
@@ -65,20 +68,30 @@ public class JwtAuthConverter implements Converter<Jwt, AbstractAuthenticationTo
     }
 
     /**
-     * For getting claims from attribute "role"
-     * Converting role with prefix "ROLE_" for accepting and understanding by Spring
-     * @param jwt token
-     * @return list of covered roles
+     * Extracts resource roles from the provided JWT token.
+     *
+     * @param jwt The JWT token from which resource roles are extracted.
+     * @return A collection of GrantedAuthority representing the extracted resource roles.
      */
     private Collection<? extends GrantedAuthority> extractResourceRoles(Jwt jwt) {
-        Collection<String> resourceRoles;
-        List<String> roles = new ArrayList<>();
-        roles.add(jwt.getClaim("role"));
 
-        resourceRoles = roles;
-        return resourceRoles
-                .stream()
+        Map<String, Object> resourceAccess = jwt.getClaim("resource_access");
+
+        Collection<String> allRoles = new ArrayList<>();
+        Collection<String> resourceRoles;
+        Collection<String> realmRoles ;
+
+        if(resourceAccess != null && resourceAccess.get(resourceId) != null){
+            Map<String, Object> account =  (Map<String, Object>) resourceAccess.get(resourceId);
+            if(account.containsKey("roles") ){
+                resourceRoles = (Collection<String>) account.get("roles");
+                allRoles.addAll(resourceRoles);
+            }
+        }
+
+        return allRoles.stream()
                 .map(role -> new SimpleGrantedAuthority("ROLE_" + role))
                 .collect(Collectors.toSet());
     }
+
 }

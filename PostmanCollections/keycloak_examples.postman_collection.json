@@ -1,7 +1,7 @@
 {
 	"info": {
 		"_postman_id": "0a9e7be7-8ada-4ae9-b30b-10f83c862b32",
-		"name": "get token",
+		"name": "keycloak_examples",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
 		"_exporter_id": "26695165",
 		"_collection_link": "https://blue-astronaut-753448.postman.co/workspace/bies_s~e5dda726-b4af-432d-bda6-e980f2c70008/collection/26695165-0a9e7be7-8ada-4ae9-b30b-10f83c862b32?action=share&source=collection_link&creator=26695165"
@@ -146,7 +146,7 @@
 						},
 						{
 							"key": "username",
-							"value": "polina",
+							"value": "test10",
 							"type": "text"
 						},
 						{
@@ -156,7 +156,7 @@
 						},
 						{
 							"key": "client_secret",
-							"value": "Ww8T1YgkVz71eEqypQuHM7qwEQOAtWV3",
+							"value": "UYCZunO1bm3Bh71mjfMFV5pcPbYh6IlW",
 							"type": "text"
 						},
 						{
@@ -180,7 +180,7 @@
 					"urlencoded": [
 						{
 							"key": "client_secret",
-							"value": "Ww8T1YgkVz71eEqypQuHM7qwEQOAtWV3",
+							"value": "UYCZunO1bm3Bh71mjfMFV5pcPbYh6IlW",
 							"type": "text"
 						},
 						{
@@ -213,6 +213,58 @@
 					]
 				},
 				"url": "http://localhost:8484/realms/bies_s/protocol/openid-connect/token"
+			},
+			"response": []
+		},
+		{
+			"name": "refresh token by url",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "refresh_token",
+							"type": "text"
+						},
+						{
+							"key": "refresh_token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI3ZTM1MTdiZi01ZjNjLTQ1ZGEtOTJjZC0xOGYxM2Y2YTgyZTIifQ.eyJleHAiOjE3MDI4OTk0NTQsImlhdCI6MTcwMjg5NzY1NCwianRpIjoiMmE4Y2UzNjAtY2NhYi00ZGNlLTk4NTItMTczYjEyOTQ3NjA1IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4NDg0L3JlYWxtcy9iaWVzX3MiLCJhdWQiOiJodHRwOi8vbG9jYWxob3N0Ojg0ODQvcmVhbG1zL2JpZXNfcyIsInN1YiI6ImJiNGE4MGZlLTYyYjEtNDVlZi05MGRjLTU3Mzg0MWZmNWM1ZCIsInR5cCI6IlJlZnJlc2giLCJhenAiOiJiaWVzX3NfcmVzdF9hcGkiLCJzZXNzaW9uX3N0YXRlIjoiOTY1OTVlZjAtMmYzNi00YzI5LTllZDUtMzExNDIzODUzNzJiIiwic2NvcGUiOiJwcm9maWxlIGVtYWlsIiwic2lkIjoiOTY1OTVlZjAtMmYzNi00YzI5LTllZDUtMzExNDIzODUzNzJiIn0.SwaXz8v4eFsYOYrF7BaA1wy0xQMi44900u-6fU2Druk",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "bies_s_rest_api",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "xzC8IWVJhY5InGVfI5XFN6JC35zlGptm",
+							"type": "text"
+						}
+					]
+				},
+				"url": "http://localhost:8484/realms/bies_s/protocol/openid-connect/token"
+			},
+			"response": []
+		},
+		{
+			"name": "config info and urls",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8484/realms/bies_s/.well-known/openid-configuration"
+			},
+			"response": []
+		},
+		{
+			"name": "public keys",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8484/realms/bies_s/protocol/openid-connect/certs"
 			},
 			"response": []
 		}

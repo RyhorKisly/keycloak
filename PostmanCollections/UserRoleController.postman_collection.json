@@ -1,0 +1,71 @@
+{
+	"info": {
+		"_postman_id": "2ad70cda-1160-4934-82ec-80426e425b4e",
+		"name": "UserRoleController",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "26695165",
+		"_collection_link": "https://blue-astronaut-753448.postman.co/workspace/bies_s~e5dda726-b4af-432d-bda6-e980f2c70008/collection/26695165-2ad70cda-1160-4934-82ec-80426e425b4e?action=share&source=collection_link&creator=26695165"
+	},
+	"item": [
+		{
+			"name": "get role",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJBN21tR3djWmlLUUlxeXVBRzhXdDh0UWNwUHhtQ1FBeVZUZTJZZnNaS2RBIn0.eyJleHAiOjE3MDMxMDUzMTMsImlhdCI6MTcwMzEwNTAxMywianRpIjoiMzE5YzY4ZWQtODUzZS00NzgyLTk3ZTAtZWY1ZmE5OTU3ZWE1IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4NDg0L3JlYWxtcy9iaWVzX3MiLCJhdWQiOlsicmVhbG0tbWFuYWdlbWVudCIsImJyb2tlciIsImFjY291bnQiXSwic3ViIjoiODEzZjg1YjAtOTMwMy00MmUxLWFlZDUtNDA3NzRiZjcwZjg0IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYmllc19zX3Jlc3RfYXBpIiwic2Vzc2lvbl9zdGF0ZSI6IjUzNmQ5ZTM0LTIzNjQtNDY5Ni1hZjcyLWM4YWU0ZDg4Mjc3ZiIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiaHR0cDovL2xvY2FsaG9zdDo4MDgwIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJkZWZhdWx0LXJvbGVzLWJpZXNfcyIsIm9mZmxpbmVfYWNjZXNzIiwidW1hX2F1dGhvcml6YXRpb24iLCJBRE1JTiIsIlVTRVIiXX0sInJlc291cmNlX2FjY2VzcyI6eyJyZWFsbS1tYW5hZ2VtZW50Ijp7InJvbGVzIjpbImNyZWF0ZS1jbGllbnQiXX0sImJyb2tlciI6eyJyb2xlcyI6WyJyZWFkLXRva2VuIl19LCJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50Iiwidmlldy1hcHBsaWNhdGlvbnMiLCJ2aWV3LWNvbnNlbnQiLCJ2aWV3LWdyb3VwcyIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwibWFuYWdlLWNvbnNlbnQiLCJkZWxldGUtYWNjb3VudCIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoiZW1haWwgcHJvZmlsZSIsInNpZCI6IjUzNmQ5ZTM0LTIzNjQtNDY5Ni1hZjcyLWM4YWU0ZDg4Mjc3ZiIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJ0ZXN0MTAiLCJmaW8iOiLQmtC40YHQu9GL0Lkg0JPRgNC40LPQvtGA0LjQuSDQlNC80LjRgtGA0LjQtdCy0LjRhyIsImVtYWlsIjoidGVzdDEwQHRlc3QudGVzdCJ9.pKfA3Jf6x8ZeGEPGgd0ykptdEvyyDB4J7eoMFxVq83zvrcs8EBhBGAgYhb_5Q4JUTIZBAq9rWF7mgr-6jEsGSQm4JljYe0XYzcT58y6_Je8HpWuAZ56PUCX_InbqRRbDRPTOlfjjskzAj4myFUX1ktDNiYyE29zjXxsGg0hvO1mnhRD9Ag6kMJxB-dsiAnHiMXN2l2OszOP8IFHcJmXS3yTk5JTpHqZ8J6nE3iMTrP6X6rsQZLS3PmYuyctlFruN1i38pTY6u9UWFEHRx5GX9KQYvCcVzR7SpYpTcSh7yWzd8_RrSZZgHTSiDNMevguLsmtkEcX0ImL9WnbIyLNzmQ"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/users/813f85b0-9303-42e1-aed5-40774bf70f84/roles"
+			},
+			"response": []
+		},
+		{
+			"name": "add role",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJBN21tR3djWmlLUUlxeXVBRzhXdDh0UWNwUHhtQ1FBeVZUZTJZZnNaS2RBIn0.eyJleHAiOjE3MDMxMDYxODUsImlhdCI6MTcwMzEwNTg4NSwianRpIjoiZjlkMjc5OTgtNjA5NC00ZDZlLTgzMTMtNDg5ZjY5MGEyOGE4IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4NDg0L3JlYWxtcy9iaWVzX3MiLCJhdWQiOlsicmVhbG0tbWFuYWdlbWVudCIsImJyb2tlciIsImFjY291bnQiXSwic3ViIjoiODEzZjg1YjAtOTMwMy00MmUxLWFlZDUtNDA3NzRiZjcwZjg0IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYmllc19zX3Jlc3RfYXBpIiwic2Vzc2lvbl9zdGF0ZSI6IjM2MDllMjViLWY4Y2UtNDNmZS05NTc0LTBhZTY2MzE1NjBhMyIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiaHR0cDovL2xvY2FsaG9zdDo4MDgwIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJkZWZhdWx0LXJvbGVzLWJpZXNfcyIsIm9mZmxpbmVfYWNjZXNzIiwidW1hX2F1dGhvcml6YXRpb24iLCJBRE1JTiIsIlVTRVIiXX0sInJlc291cmNlX2FjY2VzcyI6eyJyZWFsbS1tYW5hZ2VtZW50Ijp7InJvbGVzIjpbImNyZWF0ZS1jbGllbnQiXX0sImJyb2tlciI6eyJyb2xlcyI6WyJyZWFkLXRva2VuIl19LCJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50Iiwidmlldy1hcHBsaWNhdGlvbnMiLCJ2aWV3LWNvbnNlbnQiLCJ2aWV3LWdyb3VwcyIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwibWFuYWdlLWNvbnNlbnQiLCJkZWxldGUtYWNjb3VudCIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoiZW1haWwgcHJvZmlsZSIsInNpZCI6IjM2MDllMjViLWY4Y2UtNDNmZS05NTc0LTBhZTY2MzE1NjBhMyIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJ0ZXN0MTAiLCJmaW8iOiLQmtC40YHQu9GL0Lkg0JPRgNC40LPQvtGA0LjQuSDQlNC80LjRgtGA0LjQtdCy0LjRhyIsImVtYWlsIjoidGVzdDEwQHRlc3QudGVzdCJ9.lzoLEoPhuQJ2ZCMf4gjrmzgiI2I9xU67P2Vvakic0mxXOW164XobnfDp-QWzBM6HBI3rJTrYDTZtj4pGL0KH-liGpsOTIWa52WeHSJL844LJdVz_BHgUMS68eqr0kNiuVGy-yAN44yqCawVKT8ToXDrhPet4e1je99hxQ7LaA6z1XapwljwhReq2KH7ZoYs7NXzse9sH0mmkCNlxhry1lSVxqHDEFQ5_oE-LBqaOgwtXqmnWQNf2fN54XNnB4Yyn9gy456MT-7mFReDbIEDpEBWyGbCAx7L58inoBDQTcw6m7Ebz0YcTYguU0CFOokBAvi2LEHbP47PZCn0aktpR3A"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"url": "http://localhost:8080/users/813f85b0-9303-42e1-aed5-40774bf70f84/roles/USER"
+			},
+			"response": []
+		},
+		{
+			"name": "update role",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": ""
+					}
+				},
+				"method": "PATCH",
+				"header": [],
+				"url": "http://localhost:8080/users/813f85b0-9303-42e1-aed5-40774bf70f84/roles/ADMIN"
+			},
+			"response": []
+		},
+		{
+			"name": "update role Copy",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJMQVVjdVRXZEtraTRYbC1kcU5SUWNObDJGU1ZZeXVQTEVuU3dOQTVTSk5VIn0.eyJleHAiOjE3MDI5OTM3ODEsImlhdCI6MTcwMjk5MzQ4MSwianRpIjoiYTE4Y2I3NzQtNTlhZS00ODg2LWI0MGYtZTg5OWY5YzFiN2Q2IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4NDg0L3JlYWxtcy9iaWVzX3MiLCJhdWQiOiJhY2NvdW50Iiwic3ViIjoiYzI2MGFlOTYtNDBkNS00NDJjLWFmNjQtYzQwODQzYWRjOTdkIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiYmllc19zX3Jlc3RfYXBpIiwic2Vzc2lvbl9zdGF0ZSI6ImFhN2VjZTViLWE3MTUtNGNmZS1iNzlmLTEzNGE1YTgwNmM3YiIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiaHR0cDovL2xvY2FsaG9zdDo4MDgwIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJkZWZhdWx0LXJvbGVzLWJpZXNfcyIsIm9mZmxpbmVfYWNjZXNzIiwiQURNSU4iLCJ1bWFfYXV0aG9yaXphdGlvbiJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoiZW1haWwgcHJvZmlsZSIsInNpZCI6ImFhN2VjZTViLWE3MTUtNGNmZS1iNzlmLTEzNGE1YTgwNmM3YiIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJwb2xpbmEiLCJlbWFpbCI6InBvbGluYUBwb2xpbmEucG9saW5hIn0.hhY-qIopjgqCZ3rZJkCggRr0aFFaW_xc0MNE4lhUt_vjcqYiR4Rgl1xi63B8W6ODqAZwEbhiXzZw3ug_-UwsujtcqLyngrXkYLBrrktTQF389gK84jUeu_bK1uwwtA3NEqP0rrxUpfFqPb9YfhVqcC1sjNn2-C4Jayqdom4cERRG8EcjZKWIKQe-oeXpW-IitDzwuxp4dkoVeM_0SxquepDmaFO2-UhA1_SFuWBubZVZ-r2zN6j4z17ZThCtS3h6_dChQpPSmXyBfei1RSl-Ev992B_zHZ4lXmVus1f9hmOlFBiQ1m5CfxFv4u0U7BxU9bboKoruu5X5568BJwRdbg"
+					}
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": "http://localhost:8080/roles/userId/a972f764-4961-411b-bdc4-e377254ebe8c/role/ADMIN"
+			},
+			"response": []
+		}
+	]
+}

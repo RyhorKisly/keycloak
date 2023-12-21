@@ -1,27 +1,24 @@
-package io.ylab.keycloak_example.config;
+package io.ylab.keycloak_example.core.utils;
 
 import io.ylab.keycloak_example.config.properties.KeycloakProperties;
 import lombok.RequiredArgsConstructor;
 import org.keycloak.OAuth2Constants;
-import org.keycloak.admin.client.Keycloak;
 import org.keycloak.admin.client.KeycloakBuilder;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
+import org.springframework.stereotype.Component;
 
 /**
  * Configuration class for setting up Keycloak authentication
  */
-@Configuration
+@Component
 @RequiredArgsConstructor
-public class KeycloakConfig {
+public class KeycloakHandler {
     private final KeycloakProperties properties;
 
     /**
      * Bean method to create and configure a Keycloak instance.
      * @return Configured Keycloak instance
      */
-    @Bean
-    public Keycloak keycloak() {
+    public org.keycloak.admin.client.Keycloak keycloak() {
         return KeycloakBuilder.builder()
                 .serverUrl(properties.getUrlAuth())
                 .realm(properties.getRealm())

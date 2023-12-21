@@ -1,13 +1,11 @@
 package io.ylab.keycloak_example.endpoints.controller;
 
-import io.ylab.keycloak_example.core.dto.KeycloakServiceResponseDTO;
+import io.ylab.keycloak_example.core.dto.TokenDTO;
 import io.ylab.keycloak_example.core.dto.UserAuthorizeDTO;
-import io.ylab.keycloak_example.core.dto.UserCreateDTO;
-import io.ylab.keycloak_example.services.api.IKeycloakAccessService;
+import io.ylab.keycloak_example.services.api.KeycloakUserAccessService;
 import lombok.RequiredArgsConstructor;
 import org.keycloak.representations.AccessTokenResponse;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -21,24 +19,7 @@ public class UseAccessController {
     /**
      * Service interface for handling user access related operations.
      */
-    private final IKeycloakAccessService accessService;
-
-    /**
-     * Registers a new user.
-     *
-     * @param dto The UserCreateDTO containing user details
-     * @return ResponseEntity containing the registered user's details
-     */
-    @PostMapping("/registration")
-    public ResponseEntity<UserCreateDTO> register(
-            @RequestBody UserCreateDTO dto
-    ) {
-        KeycloakServiceResponseDTO<UserCreateDTO> responseDto = accessService.register(dto);
-        return new ResponseEntity<>(
-                responseDto.getDto(),
-                HttpStatusCode.valueOf(responseDto.getResponse().getStatus())
-        );
-    }
+    private final KeycloakUserAccessService accessService;
 
     /**
      * Authorizes a user.
@@ -46,7 +27,7 @@ public class UseAccessController {
      * @param dto The UserAuthorizeDTO containing user authorization details
      * @return ResponseEntity containing the authorization token
      */
-    @PostMapping("/auth")
+    @PostMapping("/users/auth")
     public ResponseEntity<AccessTokenResponse> authorize(
             @RequestBody UserAuthorizeDTO dto
     ) {
@@ -54,11 +35,17 @@ public class UseAccessController {
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
-    @PostMapping("/refresh")
+    /**
+     * Endpoint to refresh an access token.
+     *
+     * @param token DTO containing the refresh token
+     * @return ResponseEntity with the refreshed access token
+     */
+    @PostMapping("/users/refresh")
     public ResponseEntity<AccessTokenResponse> refreshToken(
-            @RequestParam String refreshToken
-    ) {
-        return new ResponseEntity<>(accessService.refresh(refreshToken), HttpStatus.OK);
+            @RequestBody TokenDTO token
+            ) {
+        return new ResponseEntity<>(accessService.refresh(token.getToken()), HttpStatus.OK);
 
     }
 
