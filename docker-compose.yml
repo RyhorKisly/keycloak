@@ -1,4 +1,4 @@
-version: '3'
+version: '3.5'
 
 volumes:
   postgres_data:
@@ -15,10 +15,12 @@ services:
     ports:
       - "5432:5432"
     restart: unless-stopped
+    networks:
+      - bies_s_ntwrks
 
   keycloak:
     image: quay.io/keycloak/keycloak:23.0.1
-    command: start-dev
+    command: -v start-dev --import-realm
     container_name: keycloak
     environment:
       DB_VENDOR: POSTGRES
@@ -28,12 +30,32 @@ services:
       DB_SCHEMA: public
       DB_PASSWORD: ${POSTGRES_PASSWORD:-postgres}
       KEYCLOAK_ADMIN: admin
-      KEYCLOAK_ADMIN_PASSWORD: admin_password
+      KEYCLOAK_ADMIN_PASSWORD: admin
       # Uncomment the line below if you want to specify JDBC parameters. The parameter below is just an example, and it shouldn't be used in production without knowledge. It is highly recommended that you read the PostgreSQL JDBC driver documentation in order to use it.
        #JDBC_PARAMS: "ssl=true"
+    volumes:
+      - ./keycloak:/opt/keycloak/data/import
     ports:
       - "8484:8080"
     depends_on:
       - postgres
     links:
       - "postgres:postgres"
+    networks:
+      - bies_s_ntwrks
+
+  keycloak_example:
+    container_name: keycloak_example
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    image: bies_s_keycloak_example:1.0.7
+    restart: always
+    ports:
+      - "8080:8080"
+    networks:
+      - bies_s_ntwrks
+
+networks:
+  bies_s_ntwrks:
+    name: bies_s
